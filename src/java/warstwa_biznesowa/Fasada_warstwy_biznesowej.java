@@ -28,4 +28,28 @@ public class Fasada_warstwy_biznesowej {
         this.produkt = produkt;
     }
     
+    //Tworzenie obiektu typu Produkt1
+    public void utworz_produkt(String[] dane){
+        produkt = new Produkt1();
+        produkt.setNazwa(dane[0]);
+        produkt.setCena(Float.parseFloat(dane[1]));
+        produkt.setPromocja(Integer.parseInt(dane[2]));
+    }
+    
+    //Tworzenie modelu obiektu typu Produkt1
+    public String[] dane_produktu(){
+        String nazwa = "brak produktu";
+        String cena = "brak produktu";
+        String promocja = "brak produktu";
+        String cena_brutto = "brak produktu";
+        
+        if(produkt != null){
+            nazwa = produkt.getNazwa();
+            cena="" + produkt.getCena();
+            promocja = "" + produkt.getPromocja();
+            cena_brutto = "" + produkt.cena_brutto();
+        }
+        String[] dane = {nazwa, cena, promocja, cena_brutto};
+        return dane;
+    }
 }
