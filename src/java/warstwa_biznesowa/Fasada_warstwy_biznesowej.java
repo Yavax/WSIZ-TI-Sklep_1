@@ -10,14 +10,13 @@ import warstwa_biznesowa.entity.Produkt1;
 
 /**
  *
- * @author N8
+ * @author Darek Xperia
  */
 @Stateless
 public class Fasada_warstwy_biznesowej {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
-    
     private Produkt1 produkt;
 
     public Produkt1 getProdukt() {
@@ -28,28 +27,26 @@ public class Fasada_warstwy_biznesowej {
         this.produkt = produkt;
     }
     
-    //Tworzenie obiektu typu Produkt1
-    public void utworz_produkt(String[] dane){
+    // Tworzenie produktu
+    public void utworz_produkt(String dane[]){
         produkt = new Produkt1();
         produkt.setNazwa(dane[0]);
         produkt.setCena(Float.parseFloat(dane[1]));
         produkt.setPromocja(Integer.parseInt(dane[2]));
     }
     
-    //Tworzenie modelu obiektu typu Produkt1
-    public String[] dane_produktu(){
+    public String[] dane_produktu() {
         String nazwa = "brak produktu";
         String cena = "brak produktu";
         String promocja = "brak produktu";
         String cena_brutto = "brak produktu";
-        
-        if(produkt != null){
+        if (produkt != null) {
             nazwa = produkt.getNazwa();
-            cena="" + produkt.getCena();
+            cena = "" + produkt.getCena();
             promocja = "" + produkt.getPromocja();
             cena_brutto = "" + produkt.cena_brutto();
         }
-        String[] dane = {nazwa, cena, promocja, cena_brutto};
+        String dane[] = {nazwa, cena, promocja, cena_brutto};
         return dane;
     }
 }

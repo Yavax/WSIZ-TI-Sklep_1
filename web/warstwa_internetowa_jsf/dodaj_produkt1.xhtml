@@ -8,32 +8,31 @@
     <h:body>
         <h:form>
             <h:panelGrid columns="2">
-                <h:outputLabel value="Podaj nazwe produktu" for="nazwa" />
+                <h:outputLabel value="Podaj nazwę produktu" for="nazwa"/>
                 <h:inputText
-                    id ="nazwa"
-                    title="Podaj nazwe:"
+                    id="nazwa"
+                    title="Podaj nazwę:"
                     value="#{managed_produkt.nazwa}"
                     required="true"
-                    requiredMessage="Blad: Podaj nazwe.">
+                    requiredMessage="Błąd: Podaj nazwę.">
                 </h:inputText>
-                <h:outputLabel value="Podaj cene netto produktu" for="cena" />
+                <h:outputLabel value="Podaj cenę netto produktu" for="cena"/>
                 <h:inputText
                     id="cena"
-                    title="Podaj cene:"
+                    title="Podaj cenę:"
                     value="#{managed_produkt.cena}"
                     required="true"
-                    requiredMessage="Blad: Podaj cene.">
+                    requiredMessage="Błąd: Podaj cenę.">
                 </h:inputText>
-                <h:outputLabel value="Podaj promocje produktu" for="promocja"/>
+                <h:outputLabel value="Podaj promocję produktu" for="promocja"/>
                 <h:inputText
                     id="promocja"
-                    title="Podaj promocje:"
+                    title="Podaj promocję:"
                     value="#{managed_produkt.promocja}"
-                    required="true"
-                    requiredMessage="Blad: Podaj promocje.">
+                    required="true" requiredMessage="Błąd: Podaj promocję.">
                 </h:inputText>
             </h:panelGrid>
-            <h:commandLink action="#{managed_produkt.dodaj_produkt}" value="OK"/>
+            <h:commandLink action="#{managed_produkt.dodaj_produkt()}" value="OK"/>
         </h:form>
     </h:body>
 </html>

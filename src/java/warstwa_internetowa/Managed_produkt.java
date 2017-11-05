@@ -8,6 +8,7 @@ package warstwa_internetowa;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
+import javax.enterprise.context.RequestScoped;
 import warstwa_biznesowa.Fasada_warstwy_biznesowej;
 
 /**
@@ -15,7 +16,7 @@ import warstwa_biznesowa.Fasada_warstwy_biznesowej;
  * @author N8
  */
 @Named(value = "managed_produkt")
-@Dependent
+@RequestScoped
 public class Managed_produkt {
 
     @EJB
@@ -70,6 +71,16 @@ public class Managed_produkt {
     
     public String dodaj_produkt(){
         String[] dane = {nazwa, cena, promocja};
+        fasada.utworz_produkt(dane);
+        dane_produktu();
         return "rezultat1";
+    }
+    
+    public void dane_produktu(){
+        String dane[] = fasada.dane_produktu();
+        nazwa=dane[0];
+        cena=dane[1];
+        promocja=dane[2];
+        cena_brutto=dane[3];
     }
 }
