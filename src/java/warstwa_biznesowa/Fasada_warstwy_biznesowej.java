@@ -7,10 +7,9 @@ package warstwa_biznesowa;
 
 import javax.ejb.Stateless;
 import warstwa_biznesowa.entity.Produkt1;
-
 /**
  *
- * @author Darek Xperia
+ * @author N8
  */
 @Stateless
 public class Fasada_warstwy_biznesowej {
@@ -28,7 +27,7 @@ public class Fasada_warstwy_biznesowej {
     }
     
     // Tworzenie produktu
-    public void utworz_produkt(String dane[]){
+    public void utworz_produkt(String[] dane){
         produkt = new Produkt1();
         produkt.setNazwa(dane[0]);
         produkt.setCena(Float.parseFloat(dane[1]));
@@ -40,13 +39,13 @@ public class Fasada_warstwy_biznesowej {
         String cena = "brak produktu";
         String promocja = "brak produktu";
         String cena_brutto = "brak produktu";
-        if (produkt != null) {
+        if(produkt != null) {
             nazwa = produkt.getNazwa();
             cena = "" + produkt.getCena();
             promocja = "" + produkt.getPromocja();
             cena_brutto = "" + produkt.cena_brutto();
         }
-        String dane[] = {nazwa, cena, promocja, cena_brutto};
+        String[] dane = {nazwa, cena, promocja, cena_brutto};
         return dane;
     }
 }
