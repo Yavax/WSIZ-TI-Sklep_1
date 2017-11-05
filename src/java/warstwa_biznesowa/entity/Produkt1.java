@@ -23,6 +23,7 @@ public class Produkt1 implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nazwa;
+    private String kategoria;
     private float cena;
     private int promocja;
 
@@ -40,6 +41,14 @@ public class Produkt1 implements Serializable {
 
     public void setNazwa(String nazwa) {
         this.nazwa = nazwa;
+    }
+
+    public String getKategoria() {
+        return kategoria;
+    }
+
+    public void setKategoria(String kategoria) {
+        this.kategoria = kategoria;
     }
 
     public float getCena() {

@@ -22,6 +22,7 @@ public class Managed_produkt {
     @EJB
     private Fasada_warstwy_biznesowej fasada;
     private String nazwa;
+    private String kategoria;
     private String cena;
     private String promocja;
     private String cena_brutto;
@@ -43,6 +44,14 @@ public class Managed_produkt {
 
     public void setNazwa(String nazwa) {
         this.nazwa = nazwa;
+    }
+
+    public String getKategoria() {
+        return kategoria;
+    }
+
+    public void setKategoria(String kategoria) {
+        this.kategoria = kategoria;
     }
 
     public String getCena() {
@@ -70,7 +79,7 @@ public class Managed_produkt {
     }
     
     public String dodaj_produkt(){
-        String[] dane = {nazwa, cena, promocja};
+        String[] dane = {nazwa, kategoria, cena, promocja};
         fasada.utworz_produkt(dane);
         dane_produktu();
         return "rezultat1";
@@ -79,8 +88,9 @@ public class Managed_produkt {
     public void dane_produktu(){
         String dane[] = fasada.dane_produktu();
         nazwa=dane[0];
-        cena=dane[1];
-        promocja=dane[2];
-        cena_brutto=dane[3];
+        kategoria = dane[1];
+        cena=dane[2];
+        promocja=dane[3];
+        cena_brutto=dane[4];
     }
 }

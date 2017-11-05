@@ -16,6 +16,14 @@
                     required="true"
                     requiredMessage="Błąd: Podaj nazwę.">
                 </h:inputText>
+                <h:outputLabel value="Podaj kategorię produktu" for="kategoria"/>
+                <h:inputText
+                    id="kategoria"
+                    title="Podaj kategorię:"
+                    value="#{managed_produkt.kategoria}"
+                    required="true"
+                    requiredMessage="Błąd: Podaj kategorię.">
+                </h:inputText>
                 <h:outputLabel value="Podaj cenę netto produktu" for="cena"/>
                 <h:inputText
                     id="cena"
