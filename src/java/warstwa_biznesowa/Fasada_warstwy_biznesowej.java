@@ -9,7 +9,7 @@ import javax.ejb.Stateless;
 import warstwa_biznesowa.entity.Produkt1;
 /**
  *
- * @author N8
+ * @author Paweł L. 6148
  */
 @Stateless
 public class Fasada_warstwy_biznesowej {

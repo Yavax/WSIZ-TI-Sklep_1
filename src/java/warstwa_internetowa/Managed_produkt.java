@@ -13,7 +13,7 @@ import warstwa_biznesowa.Fasada_warstwy_biznesowej;
 
 /**
  *
- * @author N8
+ * @author Paweł L. 6148
  */
 @Named(value = "managed_produkt")
 @RequestScoped
